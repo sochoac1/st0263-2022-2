@@ -15,8 +15,9 @@ Nota: recuerde abrir los puertos 5672 y 15672 en el Security Group de la máquin
 
     sino, instalar:
 
-        sudo yum install python3 -y
+        sudo apt install python3 -y
 
+    sudo apt install python3-pip -y
     sudo pip3 install pika
 
 # revisar todos estos tutoriales:
