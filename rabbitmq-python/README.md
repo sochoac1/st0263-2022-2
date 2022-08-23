@@ -37,7 +37,7 @@ Nota: recuerde abrir los puertos 5672 y 15672 en el Security Group de la máquin
     //console3: (ejecuta varias veces este comando, y notará que las recepciones por los consumidores es alternada)
     python3 producerQueue.py
 
-## TOPICOS: Cualquiera puede enviar, todos los consumidores de un tópico reciben.
+## TOPICOS con clave (key): Cualquiera puede enviar, todos los consumidores de un tópico reciben.
 
     //console1:
     python3 receive_logs_topic.py key1
@@ -46,4 +46,15 @@ Nota: recuerde abrir los puertos 5672 y 15672 en el Security Group de la máquin
     python3 receive_logs_topic.py key1
     
     //console3: (ejecuta varias veces este comando, y notará que las recepciones por los consumidores es alternada)
-    python3 emit_log_topic.py key1
+    python3 emit_logs_topic.py key1 hola mundo cruel
+
+## TOPICOS sin clave (key) - FANOUT: Cualquiera puede enviar, todos los consumidores de un tópico reciben sin necesidad de especificar una clave de filtrado de mensajes
+
+    //console1:
+    python3 receive_logs_fanout.py
+    
+    //console2:
+    python3 receive_logs_fanout.py
+    
+    //console3: (ejecuta varias veces este comando, y notará que las recepciones por los consumidores es alternada)
+    python3 emit_logs_fanout.py hola mundo cruel
