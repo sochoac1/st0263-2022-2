@@ -58,3 +58,4 @@ Nota: recuerde abrir los puertos 5672 y 15672 en el Security Group de la máquin
     
     //console3: (ejecuta varias veces este comando, y notará que las recepciones por los consumidores es alternada)
     python3 emit_logs_fanout.py hola mundo cruel
+    
