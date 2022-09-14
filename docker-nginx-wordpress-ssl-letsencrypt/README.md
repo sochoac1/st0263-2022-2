@@ -1,19 +1,25 @@
-#1. en una máquina AWS EC2 nueva y con la dirección IP Elastica de esa máquina, cree las entradas en el DNS:
+# 1. en una máquina AWS EC2 nueva y con la dirección IP Elastica de esa máquina, cree las entradas en el DNS:
 
     sudominio.com -> IP Elastica
     www.sudominio.com -> misma IP Elastica
 
-#2. instale certbot:
+# 2. instale certbot:
 
     sudo amazon-linux-extras install epel -y
     sudo yum install certbot-nginx -y
     sudo yum install nginx -y
 
-#3.1 Ejecute certbot para pedir certificado SSL para registros especificos:
+# 3.0 generar sus propios certificados SSL sin una CA:
+
+    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/nginx.key -out ssl/nginx.crt
+    
+        Renombre los archivos: nginx.key y nginx.crt a los correspondientes privkey.pem y fullchain.pem en el directorio: /home/ec2-user/wordpress/ssl/
+
+# 3.1 Ejecute certbot para pedir certificado SSL para registros especificos:
 
     sudo certbot --nginx certonly -d www.sudominio.com -d sudominio.com
 
-#3.2  Ejecute certbot para pedir certificado SSL para todo el dominio (wildcard):
+# 3.2  Ejecute certbot para pedir certificado SSL para todo el dominio (wildcard):
 
 ref: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
 
@@ -21,7 +27,7 @@ ref: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-
 
 Este comando queda pausado indicando que debe crear un registro TXT en su dominio, una vez lo cree y verifique, dele ENTER para Continuar. Debe terminar con éxito.
 
-#4. cree el los archivos docker-compose
+# 4. cree el los archivos docker-compose
 
     mkdir /home/ec2-user/wordpress
     mkdir /home/ec2-user/wordpress/ssl
@@ -45,29 +51,28 @@ Este comando queda pausado indicando que debe crear un registro TXT en su domini
 
         exit
 
-#5. instalar docker y docker-compose:
+# 5. instalar docker y docker-compose en AMI Ubuntu:22.04
 
-    sudo amazon-linux-extras install docker -y
-    sudo yum install git -y
+    sudo apt install docker.io -y
+    sudo apt install docker-compose -y
+    sudo apt install git -y
+
     sudo systemctl enable docker
     sudo systemctl start docker
-    sudo usermod -a -G docker ec2-user
-    sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    exit
+    sudo usermod -a -G docker ubuntu
 
-#6. copie los archivos del docker al sitio propio e inicie
+# 6. copie los archivos del docker al sitio propio e inicie
 
 despues de clonar este repositorio en el destino:
 
-    git clone https://github.com/st0263eafit/st0263-2261.git
+    git clone https://github.com/st0263eafit/st0263-2022-2.git
 
-    cd st026320211/docker-nginx-wordpress-ssl-letsencrypt
+    cd st0263-2022-2/docker-nginx-wordpress-ssl-letsencrypt
     sudo cp docker-compose.yml /home/ec2-user/wordpress
     sudo cp nginx.conf /home/ec2-user/wordpress
     sudo cp ssl.conf /home/ec2-user/wordpress
 
-#7. inicie el servidor de wordpress en docker.
+# 7. inicie el servidor de wordpress en docker.
 
 VERIFIQUE QUE NO ESTE CORRIENDO nginx NATIVO EN LA MÁQUINA, detengalo!!!!
 
@@ -83,8 +88,8 @@ UNA VEZ DETENIDO:
     cd /home/ec2-user/wordpress
     docker-compose up --build -d
 
-#8. pruebe desde un browser:
+# 8. pruebe desde un browser:
 
     https://sudominio.com o https://www.sudominio.com
 
-#9.  FELICITACIONES, lo logro!!!!!
+# 9.  FELICITACIONES, lo logro!!!!!
