@@ -1,5 +1,7 @@
 # ref: https://www.letscloud.io/community/how-to-set-up-an-nginx-with-certbot-on-ubuntu
 
+# cambien el usuario: 'gcp-username' por el propio de su contexto en gcp, en el caso del profe: 'emontoyaeafit'
+
 # 1. en una máquina GCP VP nueva y con la dirección IP Elastica de esa máquina, cree las entradas en el DNS:
 
     sudominio.com -> IP Elastica
