@@ -1,8 +1,9 @@
 # ref: https://www.letscloud.io/community/how-to-set-up-an-nginx-with-certbot-on-ubuntu
+# ref para wildcard: *.domain.tld ---- https://geekrewind.com/setup-lets-encrypt-wildcard-on-ubuntu-20-04-18-04/
 
-# cambien el usuario: 'gcp-username' por el propio de su contexto en gcp, en el caso del profe: 'emontoyaeafit'
+# cambien el usuario: 'gcp-username' por el propio de su contexto en gcp.
 
-# 1. en una máquina GCP VP nueva y con la dirección IP Elastica de esa máquina, cree las entradas en el DNS:
+# 1. en una máquina virtual GCP nueva y con la dirección IP Elastica de esa máquina, cree las entradas en el DNS:
 
     sudominio.com -> IP Elastica
     www.sudominio.com -> misma IP Elastica
