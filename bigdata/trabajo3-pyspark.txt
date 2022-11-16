@@ -32,6 +32,12 @@ Utilizando como base el jupyter notebook: 03-spark/Data_processing_using_PySpark
 
 ESTE NUMERAL 3, debe ser realizado con 2 tipos de procesamiento Spark: Dataframes y SparkSQL
 
+Ver ejemplo de procesamiento en SparkSQL en:
+https://www.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch04.html
+
+Los datos de prueba de este anterior ejemplo:
+https://github.com/databricks/LearningSparkV2/tree/master/databricks-datasets/learning-spark-v2/flights
+
    3.1 Los 10 departamentos con más casos de covid en Colombia ordenados de mayor a menor.
    3.2 Las 10 ciudades con más casos de covid en Colombia ordenados de mayor a menor.
    3.3 Los 10 días con más casos de covid en Colombia ordenados de mayor a menor.
