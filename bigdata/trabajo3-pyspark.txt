@@ -2,6 +2,8 @@ ST0263 TÓPICOS ESPECIALES EN TELEMÁTICA, 2022-2
 
 trabajo 3 - Spark con Notebooks y PySpark.
 
+TRABAJO INDIVIDUAL
+
 Teniendo como entrada los datos ejemplo: datasets/covid19/Casos_positivos_de_COVID-19_en_Colombia.csv
 
 si quiere trabajar con los últimos datos, descarguelos de: 
