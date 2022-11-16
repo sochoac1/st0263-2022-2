@@ -4,6 +4,7 @@
 
 ### Instalar docker en ubuntu:22.04
 
+    sudo apt update
     sudo apt install docker.io -y
     sudo apt install docker-compose -y
     sudo apt install git -y

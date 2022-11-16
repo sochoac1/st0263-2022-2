@@ -61,6 +61,14 @@ ref: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-
 
 Este comando queda pausado indicando que debe crear un registro TXT en su dominio, una vez lo cree y verifique, dele ENTER para Continuar. Debe terminar con éxito.
 
+para wildcard:
+
+sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d *.sudominio.tld --manual --preferred-challenges dns-01 certonly
+
+ejemplo:
+
+sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d *.emontoya.org --manual --preferred-challenges dns-01 certonly
+
 # 4. cree el los archivos docker-compose
 
     mkdir /home/gcp-username/wordpress
