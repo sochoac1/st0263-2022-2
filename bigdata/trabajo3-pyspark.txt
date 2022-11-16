@@ -2,7 +2,7 @@ ST0263 TÓPICOS ESPECIALES EN TELEMÁTICA, 2022-2
 
 trabajo 3 - Spark con Notebooks y PySpark.
 
-Teniendo como entrada los datos ejemplo: datasets/spark/Casos_positivos_de_COVID-19_en_Colombia.csv
+Teniendo como entrada los datos ejemplo: datasets/covid19/Casos_positivos_de_COVID-19_en_Colombia.csv
 
 si quiere trabajar con los últimos datos, descarguelos de: 
 
@@ -12,7 +12,7 @@ si quiere trabajar con los últimos datos, descarguelos de:
 
         $ wget https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD
 
-    o tambien están en el github: datasets/spark/Casos_positivos_de_COVID-19_en_Colombia.csv.zip
+    o tambien están en el github: datasets/covid19/Casos_positivos_de_COVID-19_en_Colombia.csv.zip
 
 Utilizando como base el jupyter notebook: 03-spark/Data_processing_using_PySpark.ipynb realice sobre los datos de covid:
 
@@ -29,6 +29,8 @@ Utilizando como base el jupyter notebook: 03-spark/Data_processing_using_PySpark
    2.8 ejecutar alguna función UDF o lambda sobre alguna columna creando una nueva.
 
 3. contestar las siguientes preguntas sobre los datos de covid:
+
+ESTE NUMERAL 3, debe ser realizado con 2 tipos de procesamiento Spark: Dataframes y SparkSQL
 
    3.1 Los 10 departamentos con más casos de covid en Colombia ordenados de mayor a menor.
    3.2 Las 10 ciudades con más casos de covid en Colombia ordenados de mayor a menor.
